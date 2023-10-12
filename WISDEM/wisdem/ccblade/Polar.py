@@ -287,7 +287,7 @@ class Polar(object):
             raise Exception("cdmin cannot be < 0")
 
         # lift coefficient adjustment to account for assymetry
-        cl_adj = 0.7
+        cl_adj = 1
 
         # estimate CD max
         if AR is not None:
@@ -350,6 +350,8 @@ class Polar(object):
         # -90 <-> -alpha_high
         alpha5 = np.linspace(-np.pi / 2, alpha5max, nalpha)
         alpha5 = alpha5[1:]
+        if alpha_low == -alpha_high:
+            alpha5 = alpha5[:-1]
         cl5, cd5 = self.__Viterna(-alpha5, -cl_adj)
 
         # -180+alpha_high <-> -90
