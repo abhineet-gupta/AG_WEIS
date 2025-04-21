@@ -1,0 +1,218 @@
+outputDirStructure:
+  dirs:
+    DLC22:
+      dirs:
+        openfast_runs:
+          dirs:
+            Airfoils:
+              dirs: {}
+              files:
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_34.dat
+              - DLC2.2_0_weis_job_0_AF40_Coords.txt
+              - DLC2.2_0_weis_job_0_AF20_Coords.txt
+              - DLC2.2_0_weis_job_0_AF05_Coords.txt
+              - DLC2.2_0_weis_job_0_AF16_Coords.txt
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_15.dat
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_44.dat
+              - DLC2.2_0_weis_job_0_AF45_Coords.txt
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_20.dat
+              - DLC2.2_0_weis_job_0_AF37_Coords.txt
+              - DLC2.2_0_weis_job_0_AF01_Coords.txt
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_23.dat
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_38.dat
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_49.dat
+              - DLC2.2_0_weis_job_0_AF03_Coords.txt
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_35.dat
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_05.dat
+              - DLC2.2_0_weis_job_0_AF09_Coords.txt
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_21.dat
+              - DLC2.2_0_weis_job_0_AF15_Coords.txt
+              - DLC2.2_0_weis_job_0_AF48_Coords.txt
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_11.dat
+              - DLC2.2_0_weis_job_0_AF00_Coords.txt
+              - DLC2.2_0_weis_job_0_AF41_Coords.txt
+              - DLC2.2_0_weis_job_0_AF33_Coords.txt
+              - DLC2.2_0_weis_job_0_AF44_Coords.txt
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_41.dat
+              - DLC2.2_0_weis_job_0_AF23_Coords.txt
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_09.dat
+              - DLC2.2_0_weis_job_0_AF43_Coords.txt
+              - DLC2.2_0_weis_job_0_AF31_Coords.txt
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_26.dat
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_10.dat
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_12.dat
+              - DLC2.2_0_weis_job_0_AF12_Coords.txt
+              - DLC2.2_0_weis_job_0_AF25_Coords.txt
+              - DLC2.2_0_weis_job_0_AF28_Coords.txt
+              - DLC2.2_0_weis_job_0_AF34_Coords.txt
+              - DLC2.2_0_weis_job_0_AF18_Coords.txt
+              - DLC2.2_0_weis_job_0_AF35_Coords.txt
+              - DLC2.2_0_weis_job_0_AF06_Coords.txt
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_13.dat
+              - DLC2.2_0_weis_job_0_AF21_Coords.txt
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_03.dat
+              - DLC2.2_0_weis_job_0_AF46_Coords.txt
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_25.dat
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_36.dat
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_39.dat
+              - DLC2.2_0_weis_job_0_AF42_Coords.txt
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_04.dat
+              - DLC2.2_0_weis_job_0_AF11_Coords.txt
+              - DLC2.2_0_weis_job_0_AF10_Coords.txt
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_28.dat
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_16.dat
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_46.dat
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_42.dat
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_27.dat
+              - DLC2.2_0_weis_job_0_AF29_Coords.txt
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_06.dat
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_08.dat
+              - DLC2.2_0_weis_job_0_AF14_Coords.txt
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_22.dat
+              - DLC2.2_0_weis_job_0_AF24_Coords.txt
+              - DLC2.2_0_weis_job_0_AF30_Coords.txt
+              - DLC2.2_0_weis_job_0_AF47_Coords.txt
+              - DLC2.2_0_weis_job_0_AF36_Coords.txt
+              - DLC2.2_0_weis_job_0_AF49_Coords.txt
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_33.dat
+              - DLC2.2_0_weis_job_0_AF26_Coords.txt
+              - DLC2.2_0_weis_job_0_AF07_Coords.txt
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_07.dat
+              - DLC2.2_0_weis_job_0_AF19_Coords.txt
+              - DLC2.2_0_weis_job_0_AF13_Coords.txt
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_02.dat
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_24.dat
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_18.dat
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_40.dat
+              - DLC2.2_0_weis_job_0_AF32_Coords.txt
+              - DLC2.2_0_weis_job_0_AF38_Coords.txt
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_30.dat
+              - DLC2.2_0_weis_job_0_AF39_Coords.txt
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_37.dat
+              - DLC2.2_0_weis_job_0_AF04_Coords.txt
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_48.dat
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_43.dat
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_00.dat
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_47.dat
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_32.dat
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_45.dat
+              - DLC2.2_0_weis_job_0_AF22_Coords.txt
+              - DLC2.2_0_weis_job_0_AF17_Coords.txt
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_14.dat
+              - DLC2.2_0_weis_job_0_AF02_Coords.txt
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_31.dat
+              - DLC2.2_0_weis_job_0_AF08_Coords.txt
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_01.dat
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_29.dat
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_19.dat
+              - DLC2.2_0_weis_job_0_AF27_Coords.txt
+              - DLC2.2_0_weis_job_0_AeroDyn_Polar_17.dat
+            iteration_0:
+              dirs:
+                timeseries:
+                  dirs: {}
+                  files:
+                  - weis_job_0.p
+              files:
+              - fst_vt.p
+              - summary_stats.p
+              - DELs.p
+            wind:
+              dirs: {}
+              files:
+              - weis_job_NTM_U10.000000_Seed1501552846.0.bts
+              - weis_job_NTM_U10.000000_Seed1501552846.0.in
+              - weis_job_NTM_U10.000000_Seed1501552846.0.sum
+          files:
+          - DLC2.2_0_weis_job_0.RO.dbg
+          - DLC2.2_0_weis_job_0_AeroDyn_blade.dat
+          - DLC2.2_0_weis_job_0_AeroDyn.dat
+          - DLC2.2_0_weis_job_0.fst
+          - DLC2.2_0_weis_job_0.SrvD.sum
+          - DLC2.2_0_weis_job_0_ServoDyn.dat
+          - case_matrix_combined.yaml
+          - case_matrix_DLC2.2_0.txt
+          - DLC2.2_0_weis_job_0_DISCON.IN
+          - DLC2.2_0_weis_job_0.HD.sum
+          - DLC2.2_0_weis_job_0.outb
+          - DLC2.2_0_weis_job_0_MoorDyn.dat
+          - case_matrix_combined.txt
+          - DLC2.2_0_weis_job_0_Cp_Ct_Cq.txt
+          - DLC2.2_0_weis_job_0_ElastoDyn_tower.dat
+          - DLC2.2_0_weis_job_0_InflowWind.dat
+          - DLC2.2_0_weis_job_0_ElastoDyn.dat
+          - DLC2.2_0_weis_job_0_SeaState.dat
+          - DLC2.2_0_weis_job_0.ED.sum
+          - case_matrix_DLC2.2_0.yaml
+          - DLC2.2_0_weis_job_0_ElastoDynBlade.dat
+          - DLC2.2_0_weis_job_0_HydroDyn.dat
+      files:
+      - iea15mw-modeling.yaml
+      - problem_vars.yaml
+      - iea15mw.csv
+      - iea15mw-analysis.yaml
+      - iea15mw.pkl
+      - log_opt.sql
+      - iea15mw.xlsx
+      - iea15mw.npz
+  files: []
+userOptions:
+  deisgn_of_experiments: false
+  inverse_design: false
+  optimization:
+    status: false
+    type: 3
+  output_fileName: iea15mw
+  output_folder: ../../../../examples/02_run_openfast_cases/outputs/DLC22
+  sql_recorder: true
+  sql_recorder_file: log_opt.sql
+userPreferences:
+  openfast:
+    file_path:
+      file1: None
+    graph:
+      xaxis: Time
+      yaxis:
+      - Wind1VelX
+      - GenPwr
+      - BldPitch1
+      - GenSpeed
+      - PtfmPitch
+  optimization:
+    convergence:
+      channels:
+      - floating.jointdv_0
+      - floating.jointdv_1
+      - floating.memgrp1.outer_diameter_in
+      - raft.Max_PtfmPitch
+      - floatingse.system_structural_mass
+    dlc:
+      xaxis: Wind1VelX
+      xaxis_stat: mean
+      yaxis:
+      - Wind1VelY
+      - GenSpeed
+      - PtfmPitch
+      yaxis_stat: max
+    timeseries:
+      channels:
+      - Wind1VelX
+      - GenPwr
+      - BldPitch1
+      - GenSpeed
+      - PtfmPitch
+  wisdem:
+    blade:
+      shape_yaxis:
+      - rotorse.rc.chord_m
+      - rotorse.re.pitch_axis
+      - rotorse.theta_deg
+      struct_yaxis:
+      - rotorse.rhoA_kg/m
+      struct_yaxis_log:
+      - rotorse.EA_N
+      - rotorse.EIxx_N*m**2
+      - rotorse.EIyy_N*m**2
+      - rotorse.GJ_N*m**2
+      xaxis: rotorse.rc.s
+    output_path: ../../../../examples/02_run_openfast_cases/outputs/DLC22
