@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from openfast_io.FAST_output_reader import FASTOutputFile
 
 THISDIR = os.path.dirname(os.path.abspath(__file__))
-DLC = "1.5"
+DLC = "2.2"
 
 
 def main():
@@ -19,15 +19,16 @@ def plotdf(outpath,outfiles):
     xvar = "Time_[s]"
     vars = [
         "Wind1VelX_[m/s]",
-        "Wind1VelY_[m/s]",
-        "Wave1Elev_[m]",
         "BldPitch1_[deg]",
+        "BldPitch2_[deg]",
+        "BldPitch3_[deg]",
+        "NacYaw_[deg]",
         "GenTq_[kN-m]",
         "GenSpeed_[rpm]",
-        "TwrBsMyt_[kN-m]",
+        "GenPwr_[kW]",
     ]
     nvars = len(vars)
-    f, ax = plt.subplots(nvars, 1, figsize=(10, 2 * nvars), sharex=True)
+    f, ax = plt.subplots(nvars, 1, figsize=(12, 2 * nvars), sharex=True)
     ax = [ax] if nvars == 1 else ax
 
     for outfile in outfiles:

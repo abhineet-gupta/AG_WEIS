@@ -51,7 +51,7 @@ openfast_input_map = {
 
     'wave_model': ("SeaState","WaveMod"),
     
-    'shutdown_time': [
+    'emergency_shutdown_time': [
         ("ServoDyn","TPitManS1"),
         ("ServoDyn","TPitManS2"),
         ("ServoDyn","TPitManS3"),
@@ -89,6 +89,10 @@ openfast_input_map = {
     'SU_LoadHoldDuration': ("DISCON_in","SU_LoadHoldDuration"),
 
     'shutdown_mode': ("DISCON_in","SD_Mode"),
+    'SD_EnableTime': ("DISCON_in", "SD_EnableTime"),
+    'normal_shutdown_time': ("DISCON_in", "SD_Time"),
+    'SD_MaxTorqueRate': ("DISCON_in", "SD_MaxTorqueRate"),
+    'SD_MaxPitchRate': ("DISCON_in", "SD_MaxPitchRate"),
 
     # TODO: where should turbsim live?
     # These aren't actually used to generate turbsim, the generic inputs are used
@@ -112,7 +116,7 @@ class DLCInstance(object):
         self.probability = 0.0
         self.analysis_time = 600.
         self.transient_time = 120.
-        self.shutdown_time = 9999.
+        self.normal_shutdown_time = 9999.
         self.IEC_WindType = 'NTM'
         self.turbine_status = 'operating'
         self.wave_spectrum = 'JONSWAP'
@@ -420,6 +424,10 @@ class DLCGenerator(object):
                 idlc.turbulent_wind = False
                 idlc.sigma1,idlc.V_e1 = self.IECturb.EOG(case['wind_speed'])
                 #idlc.gust_wait_time = dlc_options['gust_wait_time'] #TODO: Uncomment this after merging benchmark code
+            elif dlc_options['IEC_WindType'] == 'EDC':
+                idlc.turbulent_wind = False
+                idlc.direction_pn = case['direction']
+                idlc.sigma1 = self.IECturb.NTM(case['wind_speed'])
             elif dlc_options['IEC_WindType'] == 'EWS':
                 idlc.turbulent_wind = False
                 idlc.direction_pn = case['direction']
@@ -974,7 +982,7 @@ class DLCGenerator(object):
         # DLC Specific options:
         dlc_options['label'] = '3.2'
         dlc_options['sea_state'] = 'normal'
-        dlc_options['IEC_WindType'] = 'EDC'
+        dlc_options['IEC_WindType'] = 'EOG'
         dlc_options['pitch_initial'] = 90.
         dlc_options['turbine_status'] = 'parked-idling'     # initial turbine status is what matters here
 
@@ -982,7 +990,7 @@ class DLCGenerator(object):
 
         dlc_options['startup_mode'] = 1
         dlc_options['SU_FW_MinDuration'] = dlc_options.get('SU_FW_MinDuration',0)
-        dlc_options['SU_RotorSpeedThresh'] = dlc_options.get('SU_RotorSpeedThresh',0.0)
+        dlc_options['SU_RotorSpeedThresh'] = dlc_options.get('SU_RotorSpeedThresh',0.02)
         dlc_options['SU_RotorSpeedCornerFreq'] = dlc_options.get('SU_RotorSpeedCornerFreq',0.51888)
         dlc_options['SU_LoadStages_N'] = dlc_options.get('SU_LoadStages_N',1)
         dlc_options['SU_LoadStages'] = dlc_options.get('SU_LoadStages',1)
@@ -1027,7 +1035,8 @@ class DLCGenerator(object):
         # DLC Specific options:
         dlc_options['label'] = '3.3'
         dlc_options['sea_state'] = 'normal'
-        dlc_options['IEC_WindType'] = 'EOG'
+        dlc_options['IEC_WindType'] = 'EDC'
+        dlc_options['direction'] = ['n', 'p']
         dlc_options['pitch_initial'] = 90.
         dlc_options['turbine_status'] = 'parked-idling'     # initial turbine status is what matters here
 
@@ -1063,7 +1072,55 @@ class DLCGenerator(object):
             ]
         )  # group 0, (usually constants) turbine variables, DT, aero_modeling
         generic_case_inputs.append(['wind_speed','wave_height','wave_period', 'wind_seed', 'wave_seed']) # group 1, initial conditions will be added here, define some method that maps wind speed to ICs and add those variables to this group
-        # generic_case_inputs.append(['azimuth_init']) # group 2
+        generic_case_inputs.append(['direction']) # group 2
+      
+        self.generate_cases(generic_case_inputs,dlc_options)
+
+    def generate_4p1(self, dlc_options):
+        # Start up - EDC
+        
+        # Get default options
+        dlc_options.update(self.default_options)      
+        
+        # DLC Specific options:
+        dlc_options['label'] = '4.1'
+        dlc_options['sea_state'] = 'normal'
+        dlc_options['IEC_WindType'] = 'NTM'
+
+        # Specify startup time for this case
+
+        dlc_options['shutdown_mode'] = 1
+        dlc_options['SD_EnableTime'] = 1
+        dlc_options['SD_MaxTorqueRate'] = dlc_options.get('SD_MaxTorqueRate',4500000.0)
+        dlc_options['SD_MaxPitchRate'] = dlc_options.get('SD_MaxPitchRate',0.034900)
+
+        # Specify shutdown time for this case
+        if 'normal_shutdown_time' not in dlc_options:
+            raise Exception('normal_shutdown_time must be set for the DLC 4.1')
+        elif dlc_options['normal_shutdown_time'] > dlc_options['analysis_time']:
+            raise Exception(f"DLC 4.1 was selected, but the normal_shutdown_time ({dlc_options['normal_shutdown_time']}) option is greater than the analysis_time ({dlc_options['analysis_time']})")
+        else:
+            dlc_options['normal_shutdown_time'] = dlc_options['normal_shutdown_time']
+
+
+        # DLC-specific: define groups
+        # These options should be the same length and we will generate a matrix of all cases
+        generic_case_inputs = []
+        generic_case_inputs.append(
+            [
+                "total_time",
+                "transient_time",
+                "wake_mod",
+                "wave_model",
+                "shutdown_mode",
+                "SD_EnableTime",
+                "normal_shutdown_time",
+                "SD_MaxTorqueRate",
+                "SD_MaxPitchRate"
+            ]
+        )  # group 0, (usually constants) turbine variables, DT, aero_modeling
+        generic_case_inputs.append(['wind_speed','wave_height','wave_period', 'wind_seed', 'wave_seed']) # group 1, initial conditions will be added here, define some method that maps wind speed to ICs and add those variables to this group
+        # generic_case_inputs.append(['direction']) # group 2
       
         self.generate_cases(generic_case_inputs,dlc_options)
 
