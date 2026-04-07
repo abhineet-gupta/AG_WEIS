@@ -2,6 +2,9 @@ General:
     verbosity: False  # When set to True, the code prints to screen many infos
     openfast_configuration:
         use_exe: True
+        FAST_exe: /home/abhineet/Projects/Tools/AG_openfast/builds/build_5.0.0/glue-codes/openfast/openfast
+        path2dll: /home/abhineet/Projects/BergeyTA/TurbineModel/ReferenceTurbines/Bergey_Excel15/OpenFAST/libdiscon.so
+        turbsim_exe: /home/abhineet/Projects/Tools/AG_openfast/builds/build_5.0.0/modules/turbsim/turbsim
 
 WISDEM:
     RotorSE:
@@ -10,6 +13,7 @@ WISDEM:
         spar_cap_ps: Spar_Cap_PS
         te_ss: TE_reinforcement_SS
         te_ps: TE_reinforcement_PS
+        n_Re: 1
     TowerSE:
         flag: False
     DriveSE:
@@ -22,16 +26,24 @@ WISDEM:
 OpenFAST: 
     flag: True
     from_openfast: True
-    regulation_trajectory: ../00_setup/OpenFAST_models/IEA-15-240-RWT/IEA-15-240-RWT/IEA-15-240-RWT-outputs.yaml
-    openfast_file: IEA-15-240-RWT-UMaineSemi.fst
-    openfast_dir: ../00_setup/OpenFAST_models/IEA-15-240-RWT/IEA-15-240-RWT-UMaineSemi
+    regulation_trajectory: /home/abhineet/Projects/BergeyTA/WEIS/examples/00_setup/ref_turbines/Bergey_regulation.yaml
+    openfast_file: Bergey15.fst
+    openfast_dir: /home/abhineet/Projects/BergeyTA/TurbineModel/ReferenceTurbines/Bergey_Excel15/OpenFAST
+    # ElastoDyn:
+    #     RotSpeed: 85
+    #     BlPitch1: 0
+    #     BlPitch2: 0
+    #     BlPitch3: 0
+    #     NacYaw: 5
 
 
 ROSCO:
     flag: True
-    tuning_yaml: ../00_setup/OpenFAST_models/IEA-15-240-RWT/IEA-15-240-RWT-UMaineSemi/IEA-15-240-RWT-UMaineSemi_ROSCO.yaml
-    zeta_pc: 1.23
-    omega_pc: 0.198
+    tuning_yaml: /home/abhineet/Projects/BergeyTA/TurbineModel/ReferenceTurbines/Bergey_Excel15/OpenFAST/Bergey15_ROSCO.yaml
+    zeta_pc: 1.0
+    omega_pc: 0.7
+    zeta_vs: 0.5
+    omega_vs: 0.7
     U_pc: [12]
 
 
@@ -51,5 +63,7 @@ DLC_driver:
 
     DLCs:
         - DLC: "1.1"
-          wind_speed: [12]
+          transient_time: 0
+          analysis_time: 200
+          wind_speed: [4,8,12,16,20,24]
 
